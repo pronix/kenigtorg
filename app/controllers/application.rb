@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   include RoleRequirementSystem
   include EasyRoleRequirementSystem
   include SslRequirement
+  require 'rutils'
   
   def admin_created?
     User.first(:include => :roles, :conditions => ["roles.name = 'admin'"])

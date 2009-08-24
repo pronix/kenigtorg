@@ -1,10 +1,14 @@
-<h1><%= @taxon.name %></h1>
+<%=image_tag('close.gif',:align=>'right')-%>
+<div class='h'>view/taxons/show.html.erb</div>
 
 <% if @taxon.children.empty? %>
+
   <%= render :partial => "shared/products.html.erb", :locals => {:products => @products, :taxon => @taxon } %>
   <%= will_paginate @products, :prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;" %> 
+
 <% else %>
-  <%= render :partial => "taxon", :collection => @taxon.children %>
+  
+	<%= render :partial => "taxon", :collection => @taxon.children %>
 <% end %>
 
 <% content_for :sidebar do %>

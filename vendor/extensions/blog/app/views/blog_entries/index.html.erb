@@ -1,0 +1,25 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'blog.css' %>
+<% end %>
+
+<span>
+<h1>The blog!</h1>
+
+<h2>Essential reading</h2>
+</span>
+
+<ul style="list-style: none; margin: 0px; bottom-padding: 2em">
+<% @blogs.each do |b| %>
+  <li>
+    <%= render :partial => 'blog', :locals => {:b => b} %>
+    <br/>
+    <strong><%= pluralize(b.comments.approved.length, 'comment') %></strong> -- 
+    <%= link_to t('read_the_comments'), (blog_entry_path(b) + '#comments') %> -- 
+    <%= link_to t('submit_a_comment'), new_blog_entry_comment_path(b) %>
+    <br/>
+    <br/>
+    <br/>
+  </li>
+<% end %>
+</ul>
+

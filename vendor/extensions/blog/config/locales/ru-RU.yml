@@ -1,0 +1,22 @@
+ru-RU:
+  approve: Approve
+  blog_management: "Управление блогом" 
+  blog_management_description: "Управление блогом и комментариями"
+  review_comments: "Просмотреть комментарии"
+  are_you_sure_blog_comment: "Вы уверены что хотите удалить этот комментарий ?"
+  are_you_sure_blog_entry: "Вы уверены что хотите удалить этот пост ?"
+  back_to_blog_entries: "Вернуться в редактирование поста" 
+  back_to_the_blog: "Вернуться в блог"
+  terms_and_conditions: "Правила и Соглашения"
+  submission_guidelines: "Руководство по представлению"
+  read_the_comments: "Читать комментарии"
+  submit_a_comment: "Добавить комментарий"
+  read_the_blog: "Читать блог"
+  new_blog_entry: "Новый пост в блог"
+  please_add: "Пожалуйста добавьте Ваш комментарий ниже простым текстом (в том числе не используя html)"
+  blog_entries: "Записи блога"
+  date_auth: "Дата и Автор"
+  title_prod: "Заголовок и продукты"
+  body: "Тело сообщения"
+
+

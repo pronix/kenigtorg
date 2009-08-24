@@ -26,6 +26,7 @@ Spree::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
 
+  config.gem "rutils", :version => '>=1.0.2'
   config.gem "highline", :version => '>=1.4.0'
   config.gem 'authlogic', :version => '>=2.0.11'
   config.gem "activemerchant", :lib => "active_merchant", :version => '>=1.4.1'
@@ -70,7 +71,7 @@ Spree::Initializer.run do |config|
   # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
   # All files from config/locales/*.rb,yml are added automatically.
   #config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
-  config.i18n.default_locale = :'en-US'    
+  config.i18n.default_locale = :'ru-RU'    
     
 end
 

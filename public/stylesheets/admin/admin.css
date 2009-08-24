@@ -34,7 +34,8 @@ p.help-text {
 
 
 body {
-  background-color: #162F54;
+ /*  background-color: #162F54; */
+ background-image:url(../../images/bg.jpg);
   color: #476D9B; }
   a {
     color: #4884BD; }

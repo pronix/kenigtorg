@@ -16,5 +16,10 @@ module ApplicationHelper
   
   def flag_image(code)
     "#{code.to_s.split("-").last.downcase}.png"
-  end                      
+  end      
+
+
+	def include_jquery
+		return javascript_include_tag 'jquery-1.3.2.min.js','jquery.easing.1.3.js', controller.controller_name
+	end  
 end

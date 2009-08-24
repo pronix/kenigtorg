@@ -6,6 +6,9 @@ class ProductsController < Spree::BaseController
   helper :taxons  
   before_filter :load_data, :only => :show
   actions :show, :index
+  
+  #layout 'products_almazom'
+  layout nil
 
   index do
     before do

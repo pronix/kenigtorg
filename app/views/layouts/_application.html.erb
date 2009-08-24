@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="javascripts/iepngfix_tilebg.js"></script>
+
+ <style type="text/css">
+
+ /*
+  USAGE:
+  Copy and paste this one line into your site's CSS stylesheet.
+  Add comma-separated CSS selectors / element names that have transparent PNGs.
+  Remember that the path is RELATIVE TO THIS HTML FILE, not the CSS file.
+  See below for another method of activating the script without adding CSS here.
+ */
+
+ img, div, input { behavior: url("iepngfix.htc") }
+
+
+ /*
+  Here's an example you might use in practice:
+  img, div.menu, .pngfix, input { behavior: url("/css/iepngfix.htc") }
+ */
+
+ </style>
+
+ <!--
+  Consider wrapping the <style> element above in IE conditional comments.
+  This will prevent the .HTC being downloaded by IE7+ at all.
+  This might not work in IE6 installed alongside IE7 on the same computer.
+  -->
+
+ <!--[if lte IE 6]><style>/* ... your rules ... */</style><![endif]-->
+
+
+ <script type="text/javascript">
+ //<![CDATA[
+
+ // If you don't want to put nonstandard properties in your stylesheet, here's yet
+ // another means of activating the script. This assumes that you have at least one
+ // stylesheet included already in the document above this script.
+ // To activate, delete the CSS rules above and uncomment below (remove /* and */ ).
+
+ /*
+ if (document.all && /MSIE (5\.5|6)/.test(navigator.userAgent) &&
+  document.styleSheets && document.styleSheets[0] && document.styleSheets[0].addRule)
+ {
+  document.styleSheets[0].addRule('*', 'behavior: url(iepngfix.htc)');
+  // Feel free to add rules for specific elements only, as above.
+  // You have to call this once for each selector, like so:
+  //document.styleSheets[0].addRule('img', 'behavior: url(iepngfix.htc)');
+  //document.styleSheets[0].addRule('div', 'behavior: url(iepngfix.htc)');
+ }
+ */
+
+
+ // Here's another script that disables all PNGs in IE when the page is printed.
+ /*
+ if (window.attachEvent && /MSIE (5\.5|6)/.test(navigator.userAgent))
+ {
+  function printPNGFix(disable)
+  {
+   for (var  i = 0; i < document.all.length; i++)
+   {
+    var e = document.all[i];
+    if (e.filters['DXImageTransform.Microsoft.AlphaImageLoader'] || e._png_print)
+    {
+     if (disable)
+     {
+      e._png_print = e.style.filter;
+      e.style.filter = '';
+     }
+     else
+     {
+      e.style.filter = e._png_print;
+      e._png_print = '';
+     }
+    }
+   }
+  };
+  window.attachEvent('onbeforeprint',  function() { printPNGFix(1) });
+  window.attachEvent('onafterprint',  function() { printPNGFix(0) });
+ }
+ */
+
+ //]]>
+ </script>
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/compiled/screen.css?1250934944" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="content">
+
+
+  <div class="r_content">
+   
+   
+   
+   <div class="d_sad" align="center"><!--[if lte IE 6]><p><![endif]--><a href="/t/group/oborudovaniie-dlia-dietskogho-sada/" id="zag1">ДЕТСКИЙ САД</a><!--[if lte IE 6]></p><![endif]--> <img src="/images/dsad.jpg" style="padding-top:10px"  alt="Детский сад"  /><p><a href="#">Оборудование для дет.сада</a></p><img src="/images/razd_r_c.gif" alt="Разделитель" style="margin-left:-24px; margin-top:-15px; border:0px;" /></div>
+   <div class="school" align="center"><!--[if lte IE 6]><p><![endif]--><a href="#" id="zag2">ШКОЛА</a><!--[if lte IE 6]></p><![endif]--> <img src="/images//dsad.jpg" style="padding-top:10px" alt="Школа"  /><p><a href="#">Оборудование для школ</a></p><img src="/images/razd_r_c.gif" alt="разделитель" style="margin-left:-24px; margin-top:-15px;z-index:1; border:0px;" /></div>
+   <div class="vuz" align="center"><!--[if lte IE 6]><p><![endif]--><a href="#" id="zag3">ВУЗ, техникум</a><!--[if lte IE 6]></p><![endif]--> <img src="/images/dsad.jpg" alt="ВУЗ" style="padding-top:10px"   /><p><a href="#">Оборудование для ВУЗов</a></p><img src="/images/razd_r_c.gif" alt="Разделитель" style="margin-left:-24px; margin-top:-15px; border:0px;" /></div>
+ 
+   
+   </div>  
+ <div class="l_cont"> 
+ <div class="lb_all"></div> 
+ <div class="rb_all"></div>
+ <div class="cb"></div>
+  <div class="lb_c"></div>  
+  <div class="rb_c"></div>
+    <div class="podl_main" align="center">ОБОРУДОВАНИЕ ДЛЯ ДЕТСКОГО САДА</div>
+     <div class="m_content2">
+	 
+	 <%=yield-%>
+	 <!--
+    <img src="/images/cab_med.gif" alt="" /> <a href="#">Медицинский кабинет</a><br />
+    <img src="/images/Info_booths.gif" style="margin-top:3px;" alt="" /> <a href="#">Информационные стенды</a><br />
+    <img src="/images/Furniture.gif" style="margin-top:3px;" alt="" /> <a href="#">Мебель</a><br />
+    <img src="/images/horse.gif" style="margin-top:3px;" alt="" /> <a href="#">Спортивно&ndash;игровое оборудование</a><br />
+    <img src="/images/sensor.gif" style="margin-top:3px;" alt="" /> <a href="#">Сенсорная комната</a><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    -->
+	</div>
+ 
+<div class="block"></div>
+<div class="footer2">
+	<div class="top_footer"></div>
+    <div class="head_foot_l"></div>
+	<div class="head_foot_c">
+    
+    <div class="menu_foot"><ul id="mainnav">
+			<li><a href="#" title="">ГЛАВНАЯ</a></li>
+            <li><a href="#" title="">О КОМПАНИИ</a></li>
+            <li><a href="#" title="">НОВОСТИ</a></li>
+            <li><a href="#" title="">КОНТАКТЫ</a></li>
+            <li><a href="#" title="">ЗАЯВКА</a></li>
+            <li class="last"><a href="#" title="">ПОЛЕЗНЫЕ ССЫЛКИ</a></li>
+
+		</ul>
+    </div>
+    </div>
+    <div class="head_foot_r"></div>
+    <img src="/images/books.jpg" alt="книги" style="margin-right:10px;"  align="right"/><p>Copyright(c) 2009 Kenigtorg</p>
+</div>
+ </div>
+
+ <div class="header">
+ 	<!--<div class="lb"></div>-->
+    
+    
+    <div class="head_top_l"></div>
+    
+    <div class="head_top_c">
+       	<div class="home"><img src="/images/home.png" alt="Home" /> <a href="#" class="th">www.kenigtorg.com</a></div>
+        <div class="mail"><img src="/images/mail.png" alt="Mail" /> <a href="#" class="th">kenigtorg@mail.ru</a></div>
+        <div class="phone"><img src="/images/phone.png" alt="Phone" /> <a href="#" class="th1">(4012) 64-47-74</a></div>
+    </div>
+     <div class="head_top_r"></div>
+     <!--<div class="rb"></div>-->
+    <!-- <div class="lb2"></div>-->
+     <div class="head"></div>
+
+     <div class="search">
+       	<div class="sear">поиск</div>
+        <div class="form"><form action="#" method="post"><input type="text" size="16" /><input type="image" src="/images/button.png" style="margin-top:-24px; margin-left:125px; width:20; height:27px;" /></form></div>
+        <div class="h_main"><a href="#" style="margin-left:12px;">ГЛАВНАЯ</a></div>
+        <div class="h_company"><a href="#" style="margin-left:13px;">О КОМПАНИИ</a></div>
+    	<div class="h_news"><a href="#" style="margin-left:16px;">НОВОСТИ</a></div>
+        <div class="h_contacts"><a href="#" style="margin-left:18px;">КОНТАКТЫ</a></div>
+        <div class="h_aplication"><a href="#" style="margin-left:23px;">ЗАЯВКА</a></div>
+        <div class="h_hrefs"><a href="#" style="margin-left:14px;">ПОЛЕЗНЫЕ ССЫЛКИ</a></div>
+     </div>
+ 
+     <div class="cont_top"></div>
+  </div>
+
+
+</div>
+ 
+ 
+</body>
+</html>
