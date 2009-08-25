@@ -9,7 +9,7 @@
 BACK = '';
 
 $(document).ready(function(){
-	 
+	 check_content_height();
 	
 	$('div.cat2level').live('click',function(){
 		var desc = $(this).next();
