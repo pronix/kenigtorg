@@ -1,4 +1,6 @@
-
+div#email_error{
+	color:red;
+}
 
 .link{
 	text-decoration:underline;
