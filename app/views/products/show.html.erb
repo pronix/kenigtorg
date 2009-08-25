@@ -1,4 +1,8 @@
-<div><%=link_to_function('<< Назад',"$('div#center_content_om').html(BACK)")-%></span><%=image_tag('close.gif',:align=>'right')-%></div>
+<div>
+<%if(!params['no_back'])%>
+<span><%=link_to_function('<< Назад',"$('div#center_content_om').html(BACK)")-%></span>
+<%end%>
+<%=image_tag('close.gif',:align=>'right')-%></div>
 
 <% @body_id = 'product-details' %>
 

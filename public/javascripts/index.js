@@ -11,6 +11,61 @@ BACK = '';
 $(document).ready(function(){
 	 check_content_height();
 	
+	
+		//~ var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
+	$("input#seekbar").autocomplete(data);
+	$("input#seekbar").click(function(){
+		$(this).select();
+	}).submit(function(){
+		return false;
+	})
+	
+	$('input#seekbar').result(function(event, data, formatted) {
+    //~ $('#result').html( !data ? "No match!" : "Selected: " + formatted);
+		//~ alert(formatted)
+		//~ alert(o[formatted])
+		//~ $('div#center_content_om').show();
+		//~ show_content_window($(this));
+		
+		var off = $(this).offset();
+		$('div#center_content_om').css('left',off.left)
+		
+		
+		
+		
+		
+		
+		
+		
+		var path_end = '/products/'+o[formatted]+'?no_back=yes';
+		var offset = $(this).offset();
+		
+		show_loading(offset.top+3,offset.left+110)
+		
+		
+		
+			$.ajax({
+				 type: "GET",
+				 url: path_end,
+				 success: function(msg){
+					hide_loading();
+					$('div#center_content_om').html(msg);
+					
+					 
+						start_to_center(msg,$('input#seekbar'),'500')
+					 
+					
+				 }
+			})  
+		
+		
+		
+		
+		
+		
+	}) 
+
+	
 	$('div.cat2level').live('click',function(){
 		var desc = $(this).next();
 		var desc_t = $(desc).text();
@@ -228,7 +283,7 @@ function show_content_window(obj){
 
 function start_to_center(msg1,obj,speed){
 var os = $(obj).offset();
-var os_div = $('div.d_sad').offset();
+var os_div = $(obj).offset();
 var os_cb2 =  $('div.cb2').offset();
 var os_comp =  $('div.comp').offset();
 			
@@ -434,12 +489,8 @@ function check_content_height(){
 
 function show_full_product(obj,pathname){
 
- 
-
   	var path_end = '/products/'+pathname.replace('|',"'");
-		
-		 
-	
+
   	var path = '/products/'+path_end;
 	
 	var offset = $(obj).offset();
@@ -453,9 +504,12 @@ function show_full_product(obj,pathname){
 			 url: path_end,
 			 success: function(msg){
 				hide_loading();
-				
-				
 				$('div#center_content_om').html(msg);
+				
+				if($(obj).attr('id')=='seekbar'){
+					start_to_center(o[formatted],$('input#seekbar'),'500')
+				}
+				
 			 }
 		})  
 	

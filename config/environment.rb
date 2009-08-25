@@ -27,6 +27,7 @@ Spree::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 
   config.gem "rutils", :version => '>=1.0.2'
+  #~ config.gem "ruby-json", :version => '>=1.1.2'
   config.gem "highline", :version => '>=1.4.0'
   config.gem 'authlogic', :version => '>=2.0.11'
   config.gem "activemerchant", :lib => "active_merchant", :version => '>=1.4.1'

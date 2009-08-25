@@ -7,7 +7,33 @@
 
 <script type="text/javascript" src="javascripts/iepngfix_tilebg.js"></script>
 
+
 <%=include_jquery()-%>
+<%= javascript_include_tag "autocomplete/keywords_details.js"-%>
+	
+  
+  <%= javascript_include_tag "autocomplete/jquery.bgiframe.min.js"%>
+  <%= javascript_include_tag "autocomplete/jquery.ajaxQueue.js"-%>
+  <%= javascript_include_tag "autocomplete/jquery.autocomplete.js"-%>
+  <%= stylesheet_link_tag 'autocomplete/jquery.autocomplete.css'-%>
+
+
+<script type="text/javascript">
+	var data = "<%=@ar-%>".split("|");
+ 
+	var o = <%=@json%>
+	
+	//alert(JSON.stringify(o))
+	
+	
+
+</script>
+
+<%= javascript_include_tag 'index'-%>
+
+
+
+
 
 <style type="text/css">
 
@@ -170,7 +196,7 @@
 
      <div class="search">
        	<div class="sear">поиск</div>
-        <div class="form"><form action="#" method="post"><input type="text" size="16" /><input type="image" src="images/button.png" style="margin-top:-24px; margin-left:125px; width:20; height:27px;" /></form></div>
+        <div class="form"><form action="#" method="post"><input type="text" id='seekbar' size="16" /><input type="image" src="images/button.png" style="margin-top:-24px; margin-left:125px; width:20; height:27px;" /></form></div>
         
         
 	<div class="h_main"><span class='link top_nav'>ГЛАВНАЯ</span></div>
