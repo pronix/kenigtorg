@@ -57,7 +57,7 @@ $(document).ready(function(){
 		var desc = $(this).next();
 		var desc_t = $(desc).text();
 		
-		//alert(desc_t.length)
+		
 		
 		if(desc_t.length>7){
 			$(desc).toggle();
@@ -173,10 +173,13 @@ function show_content_window(obj){
 						//~ $('div.m_content4').html(msg);
 						check_content_height();
 						$('div.l_cont div.comp').text('Оборудование для детского сада');
-						start_to_center(msg,obj,800);
-						DG_l1 = msg;
 						
+						if(msg.length>172){
+							start_to_center(msg,obj,800);
+							DG_l1 = msg;
+						}
 						$('div#loading').hide();
+						
 					 }
 				})
 			}else{
@@ -202,8 +205,11 @@ function show_content_window(obj){
 						//~ $('div.m_content4').html(msg);
 						check_content_height();
 						$('div.l_cont div.comp').text('Оборудование для школы');
-						start_to_center(msg,obj,800);
-						SCHOOL = msg;
+						
+						if(msg.length>172){
+							start_to_center(msg,obj,800);
+							SCHOOL = msg;
+						}
 						
 						$('div#loading').hide();
 					 }
@@ -234,8 +240,11 @@ function show_content_window(obj){
 						//~ $('div.m_content4').html(msg);
 						check_content_height();
 						$('div.l_cont div.comp').text('Оборудование для ВУЗа и ПТУ');
-						start_to_center(msg,obj,800);
-						HIGHSCHOOL = msg;
+						
+						if(msg.length>172){
+							start_to_center(msg,obj,800);
+							HIGHSCHOOL = msg;
+						}
 						
 						$('div#loading').hide();
 					 }
