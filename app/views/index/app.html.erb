@@ -33,7 +33,7 @@ $('form').submit(function(){
 		$(this).val('')
 	})
 </script>
-
+<%=image_tag('close.gif',:align=>'right')-%>
 <%form_tag :action=> 'update' do %>
 	<%=text_field 'app', 'email', :value=>'e-mail'-%>
 	<p><%=text_area 'user', 'msg',:value=>'Заявка'-%></p>

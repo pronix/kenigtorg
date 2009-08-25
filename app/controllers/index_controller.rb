@@ -49,7 +49,7 @@ class IndexController < ApplicationController
 	if simple_captcha_valid?
 		flash[:notice] = 'Ваше письмо было успешно отправлено'
 		
-		OrderMailer.create_appnew(params['app_email'],params['user_msg'])
+		OrderMailer.deliver_appnew(params['app_email'],params['user_msg'])
 	else
 		flash[:notice] = 'Ошибка! повторите попытку.'
 		redirect_to :back
