@@ -12,6 +12,7 @@ $(document).ready(function(){
 	 check_content_height();
 	
 	
+	
 		//~ var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
 	$("input#seekbar").autocomplete(data);
 	$("input#seekbar").click(function(){
@@ -21,30 +22,16 @@ $(document).ready(function(){
 	})
 	
 	$('input#seekbar').result(function(event, data, formatted) {
-    //~ $('#result').html( !data ? "No match!" : "Selected: " + formatted);
-		//~ alert(formatted)
-		//~ alert(o[formatted])
-		//~ $('div#center_content_om').show();
-		//~ show_content_window($(this));
-		
+	
 		var off = $(this).offset();
 		$('div#center_content_om').css('left',off.left)
-		
-		
-		
-		
-		
-		
-		
 		
 		var path_end = '/products/'+o[formatted]+'?no_back=yes';
 		var offset = $(this).offset();
 		
 		show_loading(offset.top+3,offset.left+110)
-		
-		
-		
-			$.ajax({
+
+		$.ajax({
 				 type: "GET",
 				 url: path_end,
 				 success: function(msg){
@@ -105,18 +92,9 @@ $('div#smoke').live('click',function(){
 	});
 	
 	$('ul#mainnav li').each(function(){
-		/* var parent_div = $(this).parent().attr('class').replace('h_','');
 		
 		$(this).click(function(){
-			show_content_inside(parent_div);
-		}) */
-		
-		
-		
-		$(this).click(function(){
-			//show_content_inside(parent_div);
 			var v = $(this).text()
-	
 			
 			switch(v){
 				case 'ГЛАВНАЯ':
@@ -135,6 +113,9 @@ $('div#smoke').live('click',function(){
 				break; */
 				case 'ПОЛЕЗНЫЕ ССЫЛКИ':
 					a_show_links();
+				break;
+			  case 'ЗАЯВКА':
+					a_show_app();
 				break;
 			
 			}
@@ -365,7 +346,6 @@ function a_show_about(){
 				success: function(msg){
 				$('div.m_content4').html(msg);
 				ABOUT_US = msg;
-				check_content_height();
 				}
 		})
 	}else{
@@ -378,6 +358,25 @@ check_content_height();
 
 }
 
+function a_show_app(){
+ 	
+	var offset = $('div.h_aplication span').offset()
+	
+	show_loading(offset.top,offset.left-18)
+		$.ajax({
+				url: "index/app",
+				success: function(msg){
+				$('div#center_content_om').html(msg);
+					start_to_center(msg,$('div.h_aplication span'),'500');
+					hide_loading();
+ 
+				}
+		})
+			
+			
+		$('div.comp').text('ЗАЯВКА')
+		//~ check_content_height();
+}
 function a_show_links(){
 	if(!LINKS){
 				$.ajax({
@@ -474,6 +473,10 @@ function show_content_inside(str){
 			remove_all_seleted_but($('div.h_news span.link.top_nav'));
 			a_show_news();
 		break;
+		 case 'aplication':
+			remove_all_seleted_but($('div.h_aplication span.link.top_nav'));
+			a_show_app();
+		break;
 		 
 	}
 }
@@ -518,30 +521,4 @@ function show_full_product(obj,pathname){
 
 }
 
-function show_content(str){
-	//~ var url = "index/"+str;
-	
-	 //~ $.ajax({
-	   //~ type: "GET",
-	   //~ url: url,
-	   //~ //data: "name=John&location=Boston",
-	  
-	  
-	  //~ success: function(msg){
-		//~ //alert( "Data Saved: " + msg );
-		//~ $('div.m_content4').fadeTo('.5','slow').html(msg);
-		//~ check_content_height()
-	   //~ }
-	 //~ });
-	 
-	 
-	
-	
-	    /*  $('div.m_content4').animate({ 
-		height: "1%",
-		opacity: 0.2,
-	      }, 500 ); */
-	    alert(CONTACTS);
-	 
-	 
-}
+ 

@@ -1,10 +1,14 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
+ 
+
 class ApplicationController < ActionController::Base
   before_filter :instantiate_controller_and_action_names
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
+	
+	 include SimpleCaptcha::ControllerHelpers
 
   # Pick a unique cookie name to distinguish our session data from others'
   session_options['session_key'] = '_spree_session_id'
@@ -15,7 +19,9 @@ class ApplicationController < ActionController::Base
   include RoleRequirementSystem
   include EasyRoleRequirementSystem
   include SslRequirement
-  require 'rutils'
+  #~ require 'rutils'
+	
+
   
   def admin_created?
     User.first(:include => :roles, :conditions => ["roles.name = 'admin'"])

@@ -1,0 +1,15 @@
+<script>
+	$('form input').focus(function(){
+		$(this).val('')
+	})
+	$('form textarea').focus(function(){
+		$(this).val('')
+	})
+</script>
+
+<%form_tag :action=> 'update' do %>
+	<%=text_field 'app', 'email', :value=>'e-mail'-%>
+	<p><%=text_area 'user', 'msg',:value=>'Заявка'-%></p>
+	<%= show_simple_captcha %>
+	<%=submit_tag "Отправить"-%>
+<%end%>

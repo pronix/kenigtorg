@@ -24,6 +24,10 @@ ActionController::Routing::Routes.draw do |map|
 
   #~ map.root :controller => "products", :action => "index"
   map.root :controller => "index", :action => "index"
+	
+	 ActionController::Routing::Routes.draw do |map|
+      map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
+  end
 
   map.resource :user_session, :member => {:login_bar => :get}
   map.resource :account, :controller => "users"
@@ -99,5 +103,9 @@ ActionController::Routing::Routes.draw do |map|
   
   # a catchall route for "static" content
   map.connect '*path', :controller => 'content', :action => 'show'
+	
+	
+
+
 
 end

@@ -1,5 +1,5 @@
 class KindergardenController < ApplicationController
-  layout 'no_left'
+  #~ layout 'no_left'
 	
 	
 	
