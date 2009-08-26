@@ -186,7 +186,10 @@
     
     <div class="head_top_c">
        	<div class="home"><img src="images/home.png" alt="Home" width="11px" height="16px"/> <a href="#" class="th">www.kenigtorg.com</a></div>
-        <div class="mail"><img src="images/mail.png" width="11px" height="16px"  alt="Mail" /> <a href="#" class="th">kenigtorg@mail.ru</a></div>
+        <div class="mail"><img src="images/mail.png" width="11px" height="16px"  alt="Mail" /> 
+		
+		<%= mail_to "kenigtorg@mail.ru", "Послать письмо", :encode=> "hex", :class=>'th' -%>
+	</div>
         <div class="phone"><img src="images/phone.png" width="8px" height="16px" alt="Phone" /> <a href="#" class="th1">(4012) 64-47-74</a></div>
     </div>
      <div class="head_top_r"></div>
