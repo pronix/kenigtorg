@@ -3,7 +3,7 @@ class AppConfiguration < Configuration
   MAIL_AUTH = ['none', 'plain', 'login', 'cram_md5']
   SECURE_CONNECTION_TYPES = ['None','SSL','TLS']
 
-  preference :site_name, :string, :default => 'Spree Demo Site'
+  preference :site_name, :string, :default => 'Кинторг'
   preference :site_url, :string, :default => 'demo.spreecommerce.com'
   preference :enable_mail_delivery, :boolean, :default => false
   preference :mail_host, :string, :default => 'localhost'
@@ -19,7 +19,7 @@ class AppConfiguration < Configuration
   preference :order_bcc, :string
   preference :store_cc, :boolean, :default => false
   preference :store_cvv, :boolean, :default => false
-  preference :default_locale, :string, :default => 'en-US'
+  preference :default_locale, :string, :default => 'ru-RU'
   preference :allow_locale_switching, :boolean, :default => true
   preference :default_country_id, :integer, :default => 214
   preference :allow_backorders, :boolean, :default => true

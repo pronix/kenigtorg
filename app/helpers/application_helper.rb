@@ -21,5 +21,8 @@ module ApplicationHelper
 
 	def include_jquery
 		return javascript_include_tag 'jquery-1.3.2.min.js','jquery.easing.1.3.js'
-	end  
+	end 
+	
+	
+		
 end

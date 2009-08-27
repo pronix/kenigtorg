@@ -20,20 +20,12 @@
 
 <script type="text/javascript">
 	var data = "<%=@ar-%>".split("|");
- 
 	var o = <%=@json%>
-	
 	//alert(JSON.stringify(o))
-	
-	
 
 </script>
 
 <%= javascript_include_tag 'index'-%>
-
-
-
-
 
 <style type="text/css">
 
@@ -151,7 +143,6 @@
     
 	
 	<div class="m_content4" align="center">
-		
 		<%=show_content('about_us')-%>
     </div>
  
@@ -161,15 +152,24 @@
     <div class="head_foot_l"></div>
 	<div class="head_foot_c">
     
-    <div class="menu_foot"><ul id="mainnav">
+    <div class="menu_foot">
+		
+		<%if !isadmin?%>
+		<ul id="mainnav">
 			<li>ГЛАВНАЯ</li>
 			<li>О КОМПАНИИ</li>
 			<li>НОВОСТИ</li>
 			<li>КОНТАКТЫ</li>
 			<li>ЗАЯВКА</li>
 			<li>ПОЛЕЗНЫЕ ССЫЛКИ</li>
-
 		</ul>
+		<%else%>
+			<%=edit_link 'main','Править главную'-%> |
+			<%=edit_link 'about_us','п. о компании'-%> |
+			<%=edit_link 'contacts','п. контакты'-%> |
+			<%=edit_link 'links','п. ссылки'-%> |
+		<%end%>
+		
     </div>
 	
     </div>
