@@ -4,6 +4,11 @@ class IndexController < ApplicationController
   
   def index
   	#@about_us = SQlite::Database.new('../../db/development.sqlite3')
+		
+		be  = BlogEntry.find_by_title('main')
+		
+		
+		
 		seek_array = Product.all
 		
 		a=[]

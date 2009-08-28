@@ -50,8 +50,11 @@ module IndexHelper
 		#~ user = RoleUser.find(:all)
 		
 		#~ if(isadmin?)
-			b = BlogEntry.find_by_title(s).id
-			str = link_to(text,"/admin/blog_entries/"+b.to_s+"/edit")
+			str=''
+			if BlogEntry.find_by_title(s)
+				b = BlogEntry.find_by_title(s).id
+				str = link_to(text,"/admin/blog_entries/"+b.to_s+"/edit")
+			end
 		#~ end
 		
 		
