@@ -6,6 +6,16 @@ class IndexController < ApplicationController
   	#@about_us = SQlite::Database.new('../../db/development.sqlite3')
 		
 		be  = BlogEntry.find_by_title('main')
+	 
+		if !be
+			BlogEntry.create([
+				{:author=>'admin',:title=>'about_us',:body=>'о нас'},
+				{:author=>'admin',:title=>'main',:body=>'главная'},
+				{:author=>'admin',:title=>'links',:body=>'ссылки'},
+				{:author=>'admin',:title=>'contacts',:body=>'контакты'}
+			])
+		end	
+		
 		
 		
 		
