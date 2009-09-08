@@ -1,0 +1,300 @@
+@charset "utf-8";
+
+div#f_nav{
+	border:0px solid red;
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding:13px 0 0 0; 
+	font-size:14px;
+	color:#003366;
+}
+
+div.home{
+	font-size:12px;
+	border:0px solid green;
+	width:240px;
+	float:left;
+	text-align:right;
+}
+
+div.home img{
+	vertical-align:middle;
+}
+
+
+div#home_over{
+	border:0px solid red;
+	width:800px;
+	padding-top:10px;
+}
+a:link,a:visited,a:hover{
+	color:#003366;
+	text-decoration:underline;
+}
+a:hover{
+	text-decoration:none;
+}
+
+div#footoffoot{
+	height:55px;
+	background-color:#3C8ED8;
+	font-style:italic;
+	font-weight:bold;
+	text-align:center;
+	color:#124273;
+	font-size:14px;
+	padding:15px 0 0 0;
+}
+
+
+.clear{clear:both}
+.hbottom{
+	height:5px;
+}
+div#content_here{
+	padding:3% 1% 1% 2%;
+	font-family:verdana;
+	font-size:14px;
+}
+
+div.podl_main{
+	background-image:url(../images/podl_main.gif);
+	color:white;
+	font-family:"Times New Roman",Times,serif;
+	font-weight:bold;
+	height:20px;
+	width:600px;
+	font-size:14px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:.5em;
+}
+
+body{
+	padding:0;
+	margin:0;
+	background-image:url(../images/bg.jpg);
+	font-size:14px;
+}
+.center_content_top,div.pre_head, div#div_search,div#big_center,div#head1,div#content_wrap,div#allfooter{
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
+	border:0px solid red;
+}
+
+
+div#allfooter{
+	border:0px solid red;
+	
+}
+
+div.pre_head{
+	background-image:url(../images/top_bg.jpg);
+	height:45px;
+}
+div#div_search{
+	background-image:url(../images/search_bg.gif);
+	background-repeat:repeat-x;
+	height:37px;
+}
+
+div#div_search div#sch{
+	padding:5px 0 0 10px;
+	width:190px;
+	border:0px solid red;
+	float:left
+}
+
+
+div#div_search div.top_links a:link,a:visited {
+	color:white;
+	font-family:"Times New Roman",Times,serif;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	padding: 6px 0 0 14px;
+}
+
+div#div_search div.top_links a:hover{
+	color:red;
+}
+
+div.top_links{
+	background-image:url(../images/green_menu_bg.gif);
+	background-repeat:repeat-x;
+	vertical-align:middle;
+	width:89px;
+	float:left;
+	padding: 6px 0  15px;	
+	margin:2px 0 0 3px;
+	border:0px solid red;
+}
+
+#h_main{
+	 width:96px;
+	
+}
+
+#h_company{
+	 width:120px;
+	
+}
+#h_news{
+	 width:96px;
+}
+#h_contacts{
+	 width:105px;
+}
+#h_aplication{
+	 width:90px;
+}
+
+#h_hrefs{
+	 width:170px;
+}
+
+div#big_center{
+	background-color:#aecde9;
+	 height:940px;
+}
+
+.ie6shadow{
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color='gray', Positive='true');
+}
+
+div#content_big,div#content_big2{
+	width:645px;
+	height:600px;
+	border:0px solid red;
+	margin:.7em 0 0 .7em;
+	background-color:#FFF;
+	float:left;
+	
+}
+
+div#content_big2{
+	background-color:transparent;
+	
+}
+
+div#content_big2 div#lc_mp,div#content_big2 div#rc_mp{
+	background-color:white;
+	height:590px;
+	padding:.5em 0 0 0;
+	
+	
+}
+
+div#content_big2 div#lc_mp
+{
+	width:220px;
+	float:left;
+	border:0px solid red;
+}
+
+div#content_big2 div#rc_mp{
+	width:410px;
+	float:right;
+	
+	
+}
+
+div#right_col_big{
+	border:0px solid red;
+	width:217px;
+	float:right;
+	margin: .7em .7em 0 0;
+	padding:0 .7em 0 0;
+
+}
+
+div#content_wrap{
+	background-color:#AECDE9;
+	height:650px;
+
+}
+
+
+div.white_r_block{
+	width:225px;
+	height:180px;
+	margin:0 0 .7em 0;
+	padding:.5em 0 0 3px;
+	border:0px solid red;
+	text-align:center;
+	background-color:#FFF;
+	font-style:italic;
+}
+
+
+div.white_r_block img{
+	padding:10px 0 10px 0;
+}
+
+
+
+
+
+
+
+
+div.white_r_block div.div_title_r{
+	background-image:url(../images/bg_r_c.gif);
+	background-repeat:no-repeat;
+	color:white;
+	font-weight:bold;
+	width:199px;
+	margin-left:auto;
+	margin-right:auto;
+	border:0px solid green;
+	font-size:14px;
+	font-style:normal;
+	
+}
+body{
+	font-family:"Times New Roman",Times,serif;
+	font-size:13px;
+}
+
+div#news_title_l, div#title_rht{
+	height:17px;	
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	color:white;
+	padding:3px 0 0 0;
+	font-size:14px;
+	font-weight:bold;
+}
+
+div#news_title_l{
+	width:199px;
+	background: url(../images/news_back.jpg) 0 0 no-repeat;
+}
+
+div#title_rht{
+	width:396px;
+	background: url(../images/ncvasd.jpg) 0 0 no-repeat;
+
+}
+
+
+
+div#about_us_content,div#news_content{
+	padding:1em;
+	font:1em arial;
+	text-align:center;
+	line-height:1.5em;
+}
+
+div#lc_mp div#news_content{
+	font-style:italic;
+}
+div.list_part{}
+div.list_part img{ 
+	vertical-align:middle;
+	padding:0 10px 0 160px;
+}
