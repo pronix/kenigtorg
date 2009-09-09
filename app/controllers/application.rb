@@ -22,6 +22,26 @@ class ApplicationController < ActionController::Base
   #~ require 'rutils'
 	
 
+
+	def isadmin?
+		
+		sql = "select roles.name
+				from users
+
+				join roles_users
+				on users.id = roles_users.user_id
+
+				join roles
+				on roles.id = roles_users.role_id  WHERE roles_users.user_id LIKE '#{session['user_credentials_id']}'
+				AND roles.name LIKE 'admin'	LIMIT 1"
+		u = User.find_by_sql(sql)
+		
+		if(!u.blank?)
+			return true
+		else
+			return false
+		end
+	end
   
   def admin_created?
     User.first(:include => :roles, :conditions => ["roles.name = 'admin'"])

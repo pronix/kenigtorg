@@ -13,34 +13,7 @@ module IndexHelper
 	end
 	
 	
-	def show_news flag
-		
-		
-		
-		if(flag!='on_page')
-			news = BlogEntry.find(:all,:conditions=>["author NOT LIKE ?",'admin'],:limit=>1)		
-				
-				
-				
-				
-		else
-			news = BlogEntry.find(:all,:conditions=>["author NOT LIKE ?",'admin'])		
-				
-		end
-		
-		
-		str=''
-				for n in news
-					str+="<div class='title_news'>"+n.updated_at.strftime("%d.%m.%y")+"<br />"
-					str+=n.title+"</div>"
-					str+="<p id='news'>"+n.body+"</p>"
-				end
-		
-		
-		
-		return str
-		
-	end
+
 	
 	
 	
@@ -65,25 +38,25 @@ module IndexHelper
 		 return str
 	end
 	 
-	def isadmin?
+	#~ def isadmin?
 		
-		sql = "select roles.name
-				from users
+		#~ sql = "select roles.name
+				#~ from users
 
-				join roles_users
-				on users.id = roles_users.user_id
+				#~ join roles_users
+				#~ on users.id = roles_users.user_id
 
-				join roles
-				on roles.id = roles_users.role_id  WHERE roles_users.user_id LIKE '#{session['user_credentials_id']}'
-				AND roles.name LIKE 'admin'	LIMIT 1"
-		u = User.find_by_sql(sql)
+				#~ join roles
+				#~ on roles.id = roles_users.role_id  WHERE roles_users.user_id LIKE '#{session['user_credentials_id']}'
+				#~ AND roles.name LIKE 'admin'	LIMIT 1"
+		#~ u = User.find_by_sql(sql)
 		
-		if(!u.blank?)
-			return true
-		else
-			return false
-		end
-	end
+		#~ if(!u.blank?)
+			#~ return true
+		#~ else
+			#~ return false
+		#~ end
+	#~ end
 		
 	 
 

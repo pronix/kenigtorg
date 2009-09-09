@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>application.html.erb</title>
+<link href="/stylesheets/almazom.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<%=include_jquery()-%>
+<%= javascript_include_tag "autocomplete/keywords_details.js"-%>
+	
+  
+  <%= javascript_include_tag "autocomplete/jquery.bgiframe.min.js"%>
+  <%= javascript_include_tag "autocomplete/jquery.ajaxQueue.js"-%>
+  <%= javascript_include_tag "autocomplete/jquery.autocomplete.js"-%>
+  <%= stylesheet_link_tag 'autocomplete/jquery.autocomplete.css'-%>
+
+
+<%=javascript_include_tag "jquery.dropshadow.js","index_new_maket.js"-%>
+
+<script type="text/javascript">
+	<%seek_array = Product.all
+		
+		a=[]
+		a2 = []
+		jsn = Hash.new
+		
+		for s in seek_array
+			a<<s.name
+			jsn[s.name] = s.permalink
+			
+		end
+		
+		@ar = a.join('|')
+		@json = jsn.to_json
+	%>
+	
+	var data = "<%=@ar-%>".split("|");
+	var o = <%=@json%>
+//	alert(JSON.stringify(o))
+</script>
+
+
+
+
+</head>
+
+<body>
+<div id='loading'><%=image_tag('ajax-loader.gif')-%></div>
+<div id='center_content_om'></div>
+<div id='smoke'></div>
+
+<div id='big_center'>
+	<div class="pre_head"><img src="/images/top_lb.jpg" alt='top_lb' width="11" height="45" align="left" /><img src="/images/top_rb.jpg" alt='top_rb' width="11" height="45" align="right" />
+	<div id='home_over'>
+
+		<div class='home'>
+		<img height="16" width="11" alt="Home" src="/images/home.png"/>
+		<a href="#">www.kenigtorg.com</a>
+		</div>
+		<div class='home'>
+		<img height="16" width="11" alt="Mail" src="/images/mail.png"/>
+		<a href="#">kenigtorg@mail.ru</a>
+		
+		</div>
+		<div class='home'>
+		<img height="16" width="8" alt="Phone" src="/images/phone.png"/>
+		<a href="#">(4012) 64-47-74</a>
+		</div>
+	</div>
+
+
+	</div>
+	<div class="center_content_top"> <img src="/images/head.jpg" alt='head' width="900" height="131" /></div>
+	<div id="div_search">
+		<div id='sch'>
+					<form method="post" action="#">поиск <input type="text" size="16" id='seekbar'/></form>
+			</div>
+			
+			<%=render :partial =>'main/top_nav'-%>
+			
+	</div>
+
+	<div id='content_wrap'>
+	
+<!--		
+
+-->	
+
+<%if controller.controller_name =='main' && controller.action_name =='index'-%>
+<div id='content_big2'>
+	<div id='lc_mp'>
+		<div id='news_title_l'>НОВОСТИ</div>
+		<div id='news_content'>
+		орый практически безоговорочно признается вершиной литературы модернизма, неорый практически безоговорочно признается вершиной литературы модернизма, неорый практически безоговорочно признается вершиной литературы модернизма, неорый практически безоговорочно признается вершиной литературы модернизма, не
+		</div>
+		
+	</div>		
+	<div id='rc_mp'>
+		<div id='title_rht'>О КОМПАНИИ</div>
+		<div id='about_us_content'>Роман «Улисс», который практически безоговорочно признается вершиной литературы модернизма, несмотря на свою сюжетную простоту, вмещает в себя огромное количество исторических, философских, литературных и культурных аспектов. Дублин предстает в романе символом всего мира, Блум — мужчины как такового, его жена воплощает в себе образ всех женщин, один летний день — всех времен на земле. Подобным образом в главе «Быки солнца» находят отражение литературные стили и жанры различных эпох, стилевые особенности писателей, которых Джойс пародирует или которым подражает.</div>
+	</div>
+</div>
+<%else%>
+
+
+	<div id='content_big'>
+
+
+<%
+if params[:id]
+
+	str = params[:id][1].to_s
+
+	case str
+		when 'oborudovaniie-dlia-dietskogho-sada'
+			title = 'Оборудование для детского сада'
+		when 'oborudovaniie-dlia-shkoly'	
+			title = 'Оборудование для школы'
+		when 'oborudovaniie-dlia-vuza-i-ptu'	
+			title = 'Оборудование для ВУЗов и ПТУ'
+	end
+else
+	title = gen_title_from_action_array(controller.action_name)
+end
+%>
+
+
+	<div align="center" class="podl_main"><%=title-%></div>
+
+		<div id='content_here'>
+		 
+		
+		<%if params[:id]%>
+		
+			<%if params[:id][1] =='oborudovaniie-dlia-dietskogho-sada' || params[:id][1] =='oborudovaniie-dlia-shkoly' || params[:id][1]=='oborudovaniie-dlia-vuza-i-ptu'%>
+				<%=yield-%>
+			<%end-%>
+		<%end%>
+		
+		<%=content_show(controller.action_name) if controller.action_name!='news' && controller.action_name!='app' -%>
+		<%=show_news('on_page') if controller.action_name=='news'-%>
+		<%=yield if controller.action_name=='app'-%>
+			
+		
+		</div>
+	</div>
+<%end%>
+
+
+
+ 
+	
+ 	<%=render :partial =>'main/left_col'-%>
+	<div class='clear hbottom'></div>
+
+
+	<div id='allfooter'>
+		<div class="pre_head">
+			<img src="/images/top_lb.jpg" alt='top_lb' width="11" height="45" align="left" />
+			<img src="/images/top_rb.jpg" alt='top_rb' width="11" height="45" align="right" />
+			<div id='f_nav'>ГЛАВНАЯ | О КОМПАНИИ | НОВОСТИ | КОНТАКТЫ | ЗАЯВКА | ПОЛЕЗНЫЕ ССЫЛКИ</div>
+		</div> 
+
+
+		<div id='footoffoot'>
+			<img align="right" alt="книги" src="/images/books.jpg"/>Copyright(c) 2009 Kenigtorg
+		</div>  
+	</div> 
+
+
+
+
+
+</div><!-- content_wrap-->
+</div><!--big_center -->
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<div align='center'>
+
+<script>
+$('form input#app_email').select();
+
+$('form').submit(function(){
+	return 'false';
+})
+
+
+	$('form input#app_email').focus(function(){
+		$(this).select()
+	}).blur(function(){
+		var v = $(this).val();
+		if(v.indexOf('@')<1){
+			
+			$("input[type='submit']").hide();
+			
+			if($('div#email_error').text().length>0){
+				$('div#email_error').text('Вы ввели несуществующий email');
+				
+			}else{
+				$(this).after("<div id='email_error'>Вы ввели несуществующий email</div>");
+				
+			} 
+
+		}else{
+			$('div#email_error').text('');
+			$("input[type='submit']").show();
+			
+		}
+		
+	})
+	$('form textarea').focus(function(){
+		$(this).val('')
+	})
+</script>
+
+<%form_tag :action=> 'update' do %>
+	<%=text_field 'app', 'email', :value=>'e-mail'-%>
+	<p><%=text_area 'user', 'msg',:value=>'Заявка'-%></p>
+	<%= show_simple_captcha %>
+	<%=submit_tag "Отправить"-%>
+<%end%>
+</div>

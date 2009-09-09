@@ -10,7 +10,10 @@ BACK = '';
 
 
 $(document).ready(function(){
-	check_content_height();
+	//check_content_height();
+	
+	
+	alert(1)
 	
 	//var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
 	$("input#seekbar").autocomplete(data);
@@ -140,8 +143,8 @@ function check_content_height(){
 function start_to_center(msg1,obj,speed){
 	var os = $(obj).offset();
 	var os_div = $(obj).offset();
-	var os_cb2 =  $('div.cb2').offset();
-	var os_comp =  $('div.comp').offset();
+	var os_cb2 =  $('div#content_big').offset();
+	var os_comp =  $('div#content_big').offset();
 				
 	var cssObj = {
 		top: os.top,
@@ -152,7 +155,7 @@ function start_to_center(msg1,obj,speed){
 			
 	$('div#center_content_om').css(cssObj)
 	.animate({ 
-		width: $('div.m_content4').width()-40,
+		width: $('div#content_big').width()-70,
 		top:os_comp.top+30,
 		left: os_cb2.left+13
 	}, speed, function(){
@@ -462,7 +465,9 @@ function a_show_main(){
  
 function show_full_product(obj,pathname){
 
-  	var path_end = '/products/'+pathname.replace('|',"'");
+ 
+
+    	var path_end = '/products/'+pathname.replace('|',"'");
 
   	var path = '/products/'+path_end;
 	
@@ -471,20 +476,23 @@ function show_full_product(obj,pathname){
 	show_loading(offset.top,offset.left-15)
 	$('div#loading').css('z-index',$('div#center_content_om').css('z-index')+1);
 	
-	  BACK = $('div#center_content_om').html();
 		$.ajax({
 			 type: "GET",
 			 url: path_end,
 			 success: function(msg){
 				hide_loading();
-				$('div#center_content_om').html(msg);
+				
+				
+				$('div#center_content_om').show().html(msg);
+				
+				start_to_center(msg,obj,100);
 				
 				if($(obj).attr('id')=='seekbar'){
 					start_to_center(o[formatted],$('input#seekbar'),'500')
 				}
 				
 			 }
-		})  
+		})    
 	
 	
 	 

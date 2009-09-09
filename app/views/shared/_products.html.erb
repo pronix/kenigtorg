@@ -1,5 +1,5 @@
-<ol class="product-listing h">
-  <% column_count = 0 %>
+<ol class="product-listing">
+	<% column_count = 0 %>
   <% products.each do |product| %>
   <% column_count += 1
   column_count = 1 if column_count == 7
@@ -10,7 +10,7 @@
 			  	  <% link_to small_image(product), product %>
 						
 						
-						**<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product %>
+						<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product %>
 						
 			  <% else %>
 		     		<% link_to small_image(product), seo_url(taxon, product) %>
@@ -21,7 +21,8 @@
 						 
 						<%pathname = product.name.to_url.gsub(/'/,'|')-%>
 
-						<%=link_to_function("#{product.name}","show_full_product($(this),'#{pathname}')",:serialized =>product.name.to_url)-%>
+						<%=link_to_function("#{product.name}","show_full_product($(this),'#{pathname}')",:serialized =>product.name.to_url,:class=>'mainlinks')-%>
+						<%link_to("#{product.name}",:controller=>:products, :action=>product.name.to_url)-%>
 						
 						
 						<span class='price selling'><%=product_price(product)-%></span>

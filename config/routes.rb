@@ -23,7 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   # map.connect '/locale/:new_locale', :controller => 'locale', :action => 'set_session_locale'
 
   #~ map.root :controller => "products", :action => "index"
-  map.root :controller => "index", :action => "index"
+  map.root :controller => "main", :action => "index"
 	
 	 ActionController::Routing::Routes.draw do |map|
       map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
