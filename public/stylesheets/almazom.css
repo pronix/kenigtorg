@@ -378,3 +378,7 @@ div.title_news{
 	color:#335173;
 	line-height:1.2em;
 }
+
+input#seekbar{
+	width:70px;
+}
