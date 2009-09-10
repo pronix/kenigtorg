@@ -2,11 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>application.html.erb</title>
+<title>ООО &laquo;Кёнигторг&raqio; | Всё для любимой школы</title>
 <link href="/stylesheets/almazom.css" rel="stylesheet" type="text/css" />
-
-
-
 
 <%=include_jquery()-%>
 <%= javascript_include_tag "autocomplete/keywords_details.js"-%>
@@ -58,16 +55,17 @@
 
 		<div class='home'>
 		<img height="16" width="11" alt="Home" src="/images/home.png"/>
-		<a href="#">www.kenigtorg.com</a>
+		<%=link_to('www.kenigtorg.com','/')-%>
 		</div>
 		<div class='home'>
 		<img height="16" width="11" alt="Mail" src="/images/mail.png"/>
-		<a href="#">kenigtorg@mail.ru</a>
+		
+		<%=mail_to "kenigtorg@mail.ru", "kenigtorg @ mail.ru", :encode => "hex"%>
 		
 		</div>
 		<div class='home'>
 		<img height="16" width="8" alt="Phone" src="/images/phone.png"/>
-		<a href="#">(4012) 64-47-74</a>
+		(4012) 64-47-74
 		</div>
 	</div>
 
@@ -76,7 +74,7 @@
 	<div class="center_content_top"> <img src="/images/head.jpg" alt='head' width="900" height="131" /></div>
 	<div id="div_search">
 		<div id='sch'>
-					<form method="post" action="#">поиск <input type="text" id='seekbar'/></form>
+					поиск <input type="text" id='seekbar'/>
 			</div>
 			
 			<%=render :partial =>'main/top_nav'-%>
@@ -94,13 +92,15 @@
 	<div id='lc_mp'>
 		<div id='news_title_l'>НОВОСТИ</div>
 		<div id='news_content'>
-		орый практически безоговорочно признается вершиной литературы модернизма, неорый практически безоговорочно признается вершиной литературы модернизма, неорый практически безоговорочно признается вершиной литературы модернизма, неорый практически безоговорочно признается вершиной литературы модернизма, не
+		<%=show_news(3)-%>
 		</div>
 		
 	</div>		
 	<div id='rc_mp'>
 		<div id='title_rht'>О КОМПАНИИ</div>
-		<div id='about_us_content'>Роман «Улисс», который практически безоговорочно признается вершиной литературы модернизма, несмотря на свою сюжетную простоту, вмещает в себя огромное количество исторических, философских, литературных и культурных аспектов. Дублин предстает в романе символом всего мира, Блум — мужчины как такового, его жена воплощает в себе образ всех женщин, один летний день — всех времен на земле. Подобным образом в главе «Быки солнца» находят отражение литературные стили и жанры различных эпох, стилевые особенности писателей, которых Джойс пародирует или которым подражает.</div>
+		<div id='about_us_content'>
+			<%=content_show 'about_us'-%>
+		</div>
 	</div>
 </div>
 <%else%>
@@ -123,7 +123,7 @@ if params[:id]
 			title = 'Оборудование для ВУЗов и ПТУ'
 	end
 else
-	title = gen_title_from_action_array(controller.action_name)
+	title = gen_title_from_action_array(controller.action_name) if controller.controller_name=='main'
 end
 %>
 
@@ -139,10 +139,13 @@ end
 				<%=yield-%>
 			<%end-%>
 		<%end%>
+		<%begin%>
+			<%=content_show(controller.action_name) if controller.action_name!='news' && controller.action_name!='app' && controller.action_name!='login' && controller.controller_name=='main' -%>
+			<%=show_news('on_page') if controller.action_name=='news'-%>
+			<%=yield if controller.action_name=='app' || controller.action_name=='user_session'-%>
+			
+		<%end%>	
 		
-		<%=content_show(controller.action_name) if controller.action_name!='news' && controller.action_name!='app' -%>
-		<%=show_news('on_page') if controller.action_name=='news'-%>
-		<%=yield if controller.action_name=='app'-%>
 			
 		
 		</div>
@@ -161,7 +164,7 @@ end
 		<div class="pre_head">
 			<img src="/images/top_lb.jpg" alt='top_lb' width="11" height="45" align="left" />
 			<img src="/images/top_rb.jpg" alt='top_rb' width="11" height="45" align="right" />
-			<div id='f_nav'>ГЛАВНАЯ | О КОМПАНИИ | НОВОСТИ | КОНТАКТЫ | ЗАЯВКА | ПОЛЕЗНЫЕ ССЫЛКИ</div>
+			<div id='f_nav'><%=link_to ('ГЛАВНАЯ'),:controller=>'main',:action=>'index'-%> | <%=link_to ('О КОМПАНИИ'),:controller=>'main',:action=>'about_us'-%> | <%=link_to ('НОВОСТИ'),:controller=>'main',:action=>'news'-%> | <%=link_to ('КОНТАКТЫ'),:controller=>'main',:action=>'contacts'-%> | <%=link_to ('ЗАЯВКА'),:controller=>'main',:action=>'app'-%> | <%=link_to ('ПОЛЕЗНЫЕ ССЫЛКИ'),:controller=>'main',:action=>'links'-%></div>
 		</div> 
 
 

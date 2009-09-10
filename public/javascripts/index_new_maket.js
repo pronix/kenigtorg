@@ -166,8 +166,13 @@ function show_loading(x,y){
 function start_to_center(msg1,obj,speed){
 	var os = $(obj).offset();
 	var os_div = $(obj).offset();
-	var os_cb2 =  $('div#content_big').offset();
-	var os_comp =  $('div#content_big').offset();
+	
+	
+		var os_cb2 =  $('div#big_center').offset();
+		var os_comp =  $('div#big_center').offset();
+	 
+	
+	
 				
 	var cssObj = {
 		top: os.top,
@@ -178,9 +183,9 @@ function start_to_center(msg1,obj,speed){
 			
 	$('div#center_content_om').css(cssObj)
 	.animate({ 
-		width: $('div#content_big').width()-70,
-		top:os_comp.top+30,
-		left: os_cb2.left+13
+		width: '550px',
+		top:'252px',
+		left: os_cb2.left+25
 	}, speed, function(){
 	
 		show_smoke();

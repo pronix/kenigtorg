@@ -118,9 +118,10 @@ module MainHelper
 			else
 				str = BlogEntry.find_by_title(a).body	
 				
-					#~ if isadmin? 
+					if isadmin? 
 						str+= edit_link(controller.action_name,'Править раздел>>');
-					#~ end
+						#~ str+=isa();
+					end
 			end
 		
  
@@ -164,8 +165,24 @@ def show_news flag
 		return str
 		
 	end
-	
-	
+
+
+
+def isa
+		
+		sql = "select roles.name
+				from users
+
+				join roles_users
+				on users.id = roles_users.user_id
+
+				join roles
+				on roles.id = roles_users.role_id  WHERE roles_users.user_id LIKE '#{session['user_credentials_id']}'
+				AND roles.name LIKE 'admin'	LIMIT 1"
+		u = User.find_by_sql(sql)
+		
+		return debug u
+end	
 	
 def isadmin?
 		
