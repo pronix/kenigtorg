@@ -24452,3 +24452,45 @@ Rendering main/index
 Rendered main/_top_nav (4.3ms)
 Rendered main/_left_col (4.7ms)
 Completed in 1851ms (View: 1140, DB: 15) | 200 OK [http://localhost/]
+INFO: Mirroring assets from /windows/rails2/kt/vendor/extensions/blog/public to /windows/rails2/kt/public
+INFO: Mirroring assets from /windows/rails2/kt/vendor/extensions/localization/public to /windows/rails2/kt/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (6.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mAppConfiguration Load (1.1ms)[0m   [0mSELECT * FROM "configurations" WHERE ("configurations"."name" = 'Default configuration') AND ( ("configurations"."type" = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mPreference Load (1.5ms)[0m   [0;1mSELECT * FROM "preferences" WHERE ("preferences".owner_id = 1 AND "preferences".owner_type = 'Configuration' AND ("preferences"."group_type" IS NULL AND "preferences"."attribute" = 'enable_mail_delivery' AND "preferences"."group_id" IS NULL)) LIMIT 1[0m
+NOTICE: Mail not enabled
+INFO: Loading routes from /windows/rails2/kt/vendor/extensions/blog/config/routes.rb
+INFO: Loading routes from /windows/rails2/kt/vendor/extensions/localization/config/routes.rb
+INFO: Loading routes from /windows/rails2/kt/vendor/extensions/payment_gateway/config/routes.rb
+
+
+Processing MainController#index (for 127.0.0.1 at 2009-09-10 15:14:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+  [4;35;1mTaxonomy Load (4.5ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+  [4;36;1mTaxon Load (1.4ms)[0m   [0;1mSELECT "taxons".* FROM "taxons" WHERE ("taxons".taxonomy_id = 1 AND (parent_id is null)) [0m
+  [4;35;1mTaxon Load (1.8ms)[0m   [0mSELECT "taxons".* FROM "taxons" WHERE ("taxons".parent_id = 1) ORDER BY position[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mAppConfiguration Load (1.6ms)[0m   [0mSELECT * FROM "configurations" WHERE ("configurations"."name" = 'Default configuration') AND ( ("configurations"."type" = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Config ({})
+  [4;36;1mPreference Load (0.8ms)[0m   [0;1mSELECT * FROM "preferences" WHERE ("preferences".owner_id = 1 AND "preferences".owner_type = 'Configuration') [0m
+Cache write (will save 2.20ms): Spree::Config
+Rendering template within layouts/application
+Rendering main/index
+  [4;35;1mProduct Load (1.8ms)[0m   [0mSELECT * FROM "products" [0m
+Rendered main/_top_nav (20.5ms)
+Rendered main/_left_col (12.2ms)
+Completed in 1360ms (View: 1008, DB: 17) | 200 OK [http://localhost/]
+
+
+Processing ContentController#show (for 127.0.0.1 at 2009-09-10 15:14:52) [GET]
+  Parameters: {"action"=>"show", "path"=>["favicon.ico"], "controller"=>"content"}
+  [4;36;1mTaxonomy Load (3.8ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT "taxons".* FROM "taxons" WHERE ("taxons".taxonomy_id = 1 AND (parent_id is null)) [0m
+  [4;36;1mTaxon Load (1.4ms)[0m   [0;1mSELECT "taxons".* FROM "taxons" WHERE ("taxons".parent_id = 1) ORDER BY position[0m
+Rendering /windows/rails2/kt/public/404.html (404 Not Found)
