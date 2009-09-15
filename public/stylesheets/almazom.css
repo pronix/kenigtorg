@@ -399,8 +399,12 @@ div#is2{
 	color:#70b72b;
 }
 
-.price{
-	font-size:2em;
+li span.price, p.price span.price{
+	font-size:1em;
 	color:#70b72b;
 	font-weight:bold;
+}
+
+p.price span.price{
+	font-size:2em;
 }

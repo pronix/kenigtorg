@@ -21,7 +21,7 @@
 						 
 						<%pathname = product.name.to_url.gsub(/'/,'|')-%>
 
-						<%=link_to_function("#{product.name}","show_full_product($(this),'#{pathname}')",:serialized =>product.name.to_url,:class=>'mainlinks')-%>
+						<%=link_to("#{product.name}","/products/"+product.name.to_url,:serialized =>product.name.to_url,:class=>'mainlinks')-%>
 						<%link_to("#{product.name}",:controller=>:products, :action=>product.name.to_url)-%>
 						
 						

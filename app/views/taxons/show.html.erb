@@ -1,4 +1,3 @@
-<div class='h'>view/taxons/show.html.erb</div>
 <% render :partial => "shared/taxonomies" %>
 <% if @taxon.children.empty? %>
 
@@ -6,7 +5,7 @@
   <%= will_paginate @products, :prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;" %> 
 
 <% else %>
-  
+
 	<%= render :partial => "taxon", :collection => @taxon.children %>
 <% end %>
 
