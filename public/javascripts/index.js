@@ -13,7 +13,7 @@ $(document).ready(function(){
 	//check_content_height();
 	
 	
-	alert(1)
+//	alert(1)
 	
 	//var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
 	$("input#seekbar").autocomplete(data);
@@ -24,7 +24,7 @@ $(document).ready(function(){
 	});
 	
 		$('input#seekbar').result(function(event, data, formatted) {
-	
+			alert(1)
 		var off = $(this).offset();
 		$('div#center_content_om').css('left',off.left)
 		
@@ -35,14 +35,15 @@ $(document).ready(function(){
 
  		$.ajax({
 				 type: "GET",
-				 url: path_end,
+				 url: '/main/to_url/'+$('input#seekbar').val();,
+				 
 				 success: function(msg){
-					hide_loading();
-					$('div#center_content_om').html(msg);
-					start_to_center(msg,$('input#seekbar'),'500')
-				 },
-				 error: function(){
-					alert('error');
+					//~ hide_loading();
+					//~ $('div#center_content_om').html(msg);
+					//~ start_to_center(msg,$('input#seekbar'),'500')
+				 //~ },
+				 //~ error: function(){
+					alert(msg);
 				 }
 			})
 	}) 
@@ -463,7 +464,7 @@ function a_show_main(){
  
  
  
-function show_full_product(obj,pathname){
+/* function show_full_product(obj,pathname){
 
  
 
@@ -497,7 +498,7 @@ function show_full_product(obj,pathname){
 	
 	 
 
-}
+} */
 
 function hide_smoke(){
 	$('div#smoke').fadeTo('slow','0',function(){ $(this).hide()});

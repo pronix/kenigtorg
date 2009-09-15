@@ -43,6 +43,14 @@ class MainController < ApplicationController
 	def app
 	end	
 	
+	def search
+		@result = Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+params[:id]+"%"])
+	end
+	
+	def to_url 
+		render :inline=> params[:id].to_url
+	end	
+	
 def update
 	#~ @user = User.new(params[:user])
 	if simple_captcha_valid?

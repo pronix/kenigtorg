@@ -11,6 +11,7 @@ module MainHelper
 			a['links'] = 'ПОЛЕЗНЫЕ ССЫЛКИ'
 			a['news'] = 'НОВОСТИ'
 			a['app'] = 'ЗАЯВКА'
+			a['search'] = 'Результат поиска'
 			 
 		
 			
@@ -27,6 +28,13 @@ module MainHelper
 		
 	end
 	
+	def search_result
+			str='<ol>'
+			for r in @result
+				str+="<li>"+link_to(r.name,'/products/'+r.permalink)+"</li>"
+			end	
+			return str+'</ol>'
+	end	
 	
 	def edit_link s,text
 		#~ user = RoleUser.find(:first,:conditions=>["user_id LIKE ?",session['user_credentials_id']])

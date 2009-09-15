@@ -38,7 +38,13 @@ $('form').submit(function(){
 
 <%form_tag :action=> 'update' do %>
 	<%=text_field 'app', 'email', :value=>'e-mail'-%>
-	<p><%=text_area 'user', 'msg',:value=>'Заявка'-%></p>
+	<%if params[:subject]%>
+		<%val = params[:subject]%>
+	<%else%>
+		<%=val = 'Заявка'-%>
+	<%end%>
+	
+	<p><%=text_area 'user', 'msg',:value=>val-%></p>
 	<%= show_simple_captcha %>
 	<%=submit_tag "Отправить"-%>
 <%end%>

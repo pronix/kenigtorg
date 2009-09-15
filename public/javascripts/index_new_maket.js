@@ -10,37 +10,25 @@ $(document).ready(function(){
 
 
 
-$("input#seekbar").autocomplete(data);
+//$("input#seekbar").autocomplete(data);
 	
 	$("input#seekbar").click(function(){
 		$(this).select();
-	}).submit(function(){
-		return false;
 	});
 	
 	
-	$('input#seekbar').result(function(event, data, formatted) {
+	$('input#submit').click(go_search);
 	
-		var off = $(this).offset();
-		$('div#center_content_om').css('left',off.left)
-		
-		var path_end = '/products/'+o[formatted]+'?no_back=yes';
-		var offset = $(this).offset();
-		
-		show_loading(offset.top+3,offset.left+110);
-
- 		$.ajax({
-				 type: "GET",
-				 url: path_end,
-				 success: function(msg){
-					hide_loading();
-					$('div#center_content_om').html(msg);
-					start_to_center(msg,$('input#seekbar'),'500')
-				 },
-				 error: function(){
-					alert('error');
-				 }
-			})
+	
+	function go_search(){
+		location ='/main/search/'+$('input#seekbar').val();
+ 
+	}//go_search
+	
+	
+	
+	$('input#seekbar').result(function(event, data, formatted) {
+		go_search();
 	}) 
 	
 	

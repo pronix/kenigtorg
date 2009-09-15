@@ -94,7 +94,7 @@ div#div_search{
 }
 
 div#div_search div#sch{
-	padding:5px 0 0 10px;
+	padding:5px 0 0 5px;
 	width:190px;
 	border:0px solid red;
 	float:left
@@ -367,7 +367,40 @@ div.title_news{
 	line-height:1.2em;
 }
 
+ 
+input#submit{
+	cursor:pointer;
+}
 input#seekbar{
-	width:130px;
+	width:120px;
+	font-size:11px;
 /* 	background-color:green; */
+}
+
+
+div#is1,div#is2{
+	border:0px solid red;
+	height:30px;
+	width:165px;
+	float:left;
+	padding:2px 0 0 0;
+}
+
+div#is2{
+	width:25px;
+	float:right;
+	padding:0 0 0 0;
+}
+
+.blue{
+	color:#5690c8;
+}
+.green{
+	color:#70b72b;
+}
+
+.price{
+	font-size:2em;
+	color:#70b72b;
+	font-weight:bold;
 }

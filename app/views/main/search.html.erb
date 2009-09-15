@@ -1,0 +1,7 @@
+<%if @result.count>0%>
+<h4>По вашему запросу <span class='blue'>"<%=params[:id]-%>"</span> найдено <span class='green'><%=@result.count-%> шт.</span> :</h4>
+
+<%=search_result()-%>
+<%else%>
+	<h4>По вашему запросу ничего не найдено:</h4>
+<%end%>

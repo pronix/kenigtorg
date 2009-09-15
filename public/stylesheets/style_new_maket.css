@@ -904,3 +904,7 @@ filter:expression(fixPNG(this));
 #zagp {
 	padding: 0 0 0 0;
 }
+
+input#submit{
+	vertical-align:middle;
+}

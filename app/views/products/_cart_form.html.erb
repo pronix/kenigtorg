@@ -22,7 +22,7 @@
             <%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders] %>
             <%= variant_options v %>
             <% if variant_price_diff v %>
-              <span class="price diff"><%= variant_price_diff v %></span>
+             -- <span class="price diff"><%= variant_price_diff v %></span>
             <% end %>
           </label>
         </li>
@@ -64,7 +64,7 @@
   <% end%>		
 	
   <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
-      <%= text_field_tag (@product.variants? ? :quantity : "variants[#{@product.variant.id}]"), 
+      <% text_field_tag (@product.variants? ? :quantity : "variants[#{@product.variant.id}]"), 
                      1, :class => "title", :size => 3 %>
       &nbsp;
       <!--<button type='submit' class='large primary'>-->

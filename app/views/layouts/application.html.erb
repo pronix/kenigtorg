@@ -74,7 +74,7 @@
 	<div class="center_content_top"> <img src="/images/head.jpg" alt='head' width="900" height="131" /></div>
 	<div id="div_search">
 		<div id='sch'>
-					поиск <input type="text" id='seekbar'/>
+					<div id='is1'>поиск <input type="text" id='seekbar'/></div><div id='is2'><input type="image" src='/images/go.jpg' id='submit'/></div>
 			</div>
 			
 			<%=render :partial =>'main/top_nav'-%>
@@ -122,9 +122,13 @@ if params[:id]
 		when 'oborudovaniie-dlia-vuza-i-ptu'	
 			title = 'Оборудование для ВУЗов и ПТУ'
 	end
+	str='---'
 else
 	title = gen_title_from_action_array(controller.action_name) if controller.controller_name=='main'
 end
+
+title = gen_title_from_action_array(controller.action_name) if controller.action_name=='search'
+title = 'Подробнее' if controller.controller_name=='products' && controller.action_name=='show'
 %>
 
 
@@ -140,13 +144,16 @@ end
 			<%end-%>
 		<%end%>
 		
-			<%=content_show(controller.action_name) if controller.action_name!='news' && controller.action_name!='app' && controller.action_name!='login' && controller.controller_name=='main' -%>
+			<%=content_show(controller.action_name) if controller.action_name!='news' && controller.action_name!='app' && controller.action_name!='login' && controller.action_name!='search' && controller.controller_name=='main' -%>
 			<%=show_news('on_page') if controller.action_name=='news'-%>
 			<%=yield if controller.action_name=='app'-%>
 			
 		
 		
 			<%=yield if controller.controller_name=='user_sessions'-%>
+			<%=yield if controller.controller_name=='products' && controller.action_name=='show'-%>
+			<%=yield if controller.action_name=='search'-%>
+			
 			
 		
 		</div>
