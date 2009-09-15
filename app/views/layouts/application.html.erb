@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ООО &laquo;Кёнигторг&raqio; | Всё для любимой школы</title>
+<title>ООО &laquo;Кёнигторг&raquo; | Всё для любимой школы</title>
 <link href="/stylesheets/almazom.css" rel="stylesheet" type="text/css" />
 
 <%=include_jquery()-%>
@@ -139,13 +139,14 @@ end
 				<%=yield-%>
 			<%end-%>
 		<%end%>
-		<%begin%>
+		
 			<%=content_show(controller.action_name) if controller.action_name!='news' && controller.action_name!='app' && controller.action_name!='login' && controller.controller_name=='main' -%>
 			<%=show_news('on_page') if controller.action_name=='news'-%>
-			<%=yield if controller.action_name=='app' || controller.action_name=='user_session'-%>
+			<%=yield if controller.action_name=='app'-%>
 			
-		<%end%>	
 		
+		
+			<%=yield if controller.controller_name=='user_sessions'-%>
 			
 		
 		</div>
