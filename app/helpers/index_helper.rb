@@ -12,6 +12,16 @@ module IndexHelper
 		return str
 	end
 	
+	def show_content_by_id target
+		a = BlogEntry.scoped_by_author('admin').scoped_by_id(target)
+		
+		str=''
+		for n in a
+			str+=n.body
+		end
+		
+		return str
+  end
 	
 
 	

@@ -4,10 +4,12 @@
   <%= form.label :author %><br />
   <%= form.text_field :author %>
 </p>
+<% unless @blog_entry.title =~ /about_us|main|links|contacts/ %>
 <p>
   <%= form.label :title %><br />
   <%= form.text_field :title %>
 </p>
+<% end %>
 <p>
   <%= form.label :body %><br />
   <%= form.text_area :body, :cols => 60, :rows => 10 %>
