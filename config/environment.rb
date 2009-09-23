@@ -95,5 +95,5 @@ Time::DATE_FORMATS[:short_date] = "%Y-%m-%d"
 # Mime::Type.register "application/x-mobile", :mobile
 
 # Include your application configuration below
-Encoding.default_internal = 'utf-8'
-Encoding.default_external = 'utf-8'
+#Encoding.default_internal = 'utf-8'
+#Encoding.default_external = 'utf-8'
