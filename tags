@@ -23,6 +23,7 @@ ActionControllerExtension	vendor/plugins/resource_controller/lib/resource_contro
 ActionOptions	vendor/plugins/resource_controller/lib/resource_controller/action_options.rb	/^  class ActionOptions$/;"	c	class:ResourceController
 ActionOptions	vendor/plugins/resource_controller/test/vendor/plugins/shoulda/lib/shoulda/controller_tests/controller_tests.rb	/^          class ActionOptions$/;"	c	class:ThoughtBot.Shoulda.Controller.ClassMethods.ResourceOptions
 ActionOptionsTest	vendor/plugins/resource_controller/test/test/unit/action_options_test.rb	/^class ActionOptionsTest < Test::Unit::TestCase$/;"	c
+ActionView	config/initializers/utf_bug.rb	/^module ActionView$/;"	m
 ActionView	lib/plugins/monkey_patches/lib/monkey_patches.rb	/^class ActionView::Helpers::FormBuilder$/;"	c
 ActionView	lib/plugins/monkey_patches/lib/monkey_patches.rb	/^module ActionView::Helpers::ActiveRecordHelper  	$/;"	m
 ActionView	lib/plugins/option_tags_with_disable/lib/option_tags_will_disable.rb	/^module ActionView$/;"	m
@@ -688,6 +689,7 @@ RenameAppConfiguration	db/migrate/20080918140438_rename_app_configuration.rb	/^c
 RenameBaseToSource	db/migrate/20090806160214_rename_base_to_source.rb	/^class RenameBaseToSource < ActiveRecord::Migration$/;"	c
 RenameChargesToAdjustments	db/migrate/20090806063212_rename_charges_to_adjustments.rb	/^class RenameChargesToAdjustments < ActiveRecord::Migration$/;"	c
 RenameTxnTable	db/migrate/20080720190623_rename_txn_table.rb	/^class RenameTxnTable < ActiveRecord::Migration$/;"	c
+Renderable	config/initializers/utf_bug.rb	/^  module Renderable #:nodoc:$/;"	m	class:ActionView
 ResourceController	vendor/plugins/resource_controller/lib/resource_controller.rb	/^module ResourceController$/;"	m
 ResourceController	vendor/plugins/resource_controller/lib/resource_controller/accessors.rb	/^module ResourceController # :nodoc:$/;"	m
 ResourceController	vendor/plugins/resource_controller/lib/resource_controller/action_options.rb	/^module ResourceController$/;"	m
@@ -1027,7 +1029,7 @@ append_class_name	vendor/plugins/tinymce_hammer/lib/tinymce/hammer/view_helpers.
 append_simple_captcha_code	vendor/plugins/simple_captcha/lib/simple_captcha_image.rb	/^    def append_simple_captcha_code #:nodoc      $/;"	f	class:SimpleCaptcha
 applicable_filters	app/models/taxon.rb	/^  def applicable_filters$/;"	f	class:Taxon
 apply_simple_captcha	vendor/plugins/simple_captcha/lib/simple_captcha_active_record.rb	/^      def apply_simple_captcha(options = {})$/;"	f	class:SimpleCaptcha.ModelHelpers.ClassMethods
-appnew	app/models/order_mailer.rb	/^	def appnew(@name,@msg)$/;"	f	class:OrderMailer
+appnew	app/models/order_mailer.rb	/^	def appnew(name,msg)$/;"	f	class:OrderMailer
 approve	vendor/extensions/blog/app/controllers/admin/comments_controller.rb	/^  def approve$/;"	f	class:Admin
 aspect	vendor/plugins/paperclip/lib/paperclip/geometry.rb	/^    def aspect$/;"	f	class:Paperclip.Geometry
 assert_contains	vendor/plugins/resource_controller/test/vendor/plugins/shoulda/lib/shoulda/general.rb	/^      def assert_contains(collection, x, extra_msg = "")$/;"	f	class:ThoughtBot.Shoulda
@@ -1191,6 +1193,7 @@ collection_with_attributes_writer	vendor/plugins/attribute_fu/lib/attribute_fu/a
 color	vendor/plugins/resource_controller/test/vendor/plugins/shoulda/lib/shoulda/color.rb	/^  def self.color(color) # :nodoc:$/;"	F	class:ThoughtBot
 combine	vendor/plugins/tinymce_hammer/app/controllers/tinymce/hammer_controller.rb	/^  def combine$/;"	f	class:Tinymce
 comp	spec/lib/easy_role_requirement_system_spec.rb	/^  def comp;end$/;"	f	class:Control0Controller.index.show
+compile!	config/initializers/utf_bug.rb	/^      def compile!(render_symbol, local_assigns)$/;"	f	class:ActionView.Renderable
 complete_order	app/models/order.rb	/^  def complete_order$/;"	f	class:Order
 compute	app/models/calculator.rb	/^  def compute(something=nil)$/;"	f	class:Calculator
 compute	app/models/calculator/flat_percent.rb	/^  def compute(object = nil)$/;"	f	class:Calculator
@@ -2369,6 +2372,7 @@ show	vendor/plugins/resource_controller/lib/resource_controller/actions.rb	/^   
 show_code	app/controllers/form_protect_controller.rb	/^  def show_code$/;"	f	class:FormProtectController
 show_code_kirby	app/controllers/form_protect_controller.rb	/^  def show_code_kirby$/;"	f	class:FormProtectController
 show_content	app/helpers/index_helper.rb	/^	def show_content target$/;"	f	class:IndexHelper
+show_content_by_id	app/helpers/index_helper.rb	/^	def show_content_by_id target$/;"	f	class:IndexHelper
 show_image	app/controllers/form_protect_controller.rb	/^  def show_image$/;"	f	class:FormProtectController
 show_news	app/helpers/main_helper.rb	/^def show_news flag$/;"	f	class:MainHelper
 show_not	app/helpers/admin/inventory_settings_helper.rb	/^  def show_not(true_or_false)$/;"	f	class:Admin

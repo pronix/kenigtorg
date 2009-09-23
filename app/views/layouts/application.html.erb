@@ -34,7 +34,7 @@
 		@json = jsn.to_json
 	%>
 	
-	var data = "<%=@ar-%>".split("|");
+  var data = "<%=@ar.to_s%>".split("|");
 	var o = <%=@json%>
 //	alert(JSON.stringify(o))
 </script>
