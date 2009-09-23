@@ -1,3 +1,4 @@
+# coding: utf-8
 module MainHelper
 	def gen_title_from_action_array act
 			

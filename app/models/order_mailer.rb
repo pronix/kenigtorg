@@ -27,9 +27,9 @@ class OrderMailer < ActionMailer::Base
 	
 	
 	
-	def appnew(@name,@msg)
-		@name = @name
-		@msg = @msg
+	def appnew(name,msg)
+		@name = name
+		@msg = msg
 	end
 	
 	
