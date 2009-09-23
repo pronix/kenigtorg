@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 class Taxon < ActiveRecord::Base
   acts_as_adjacency_list :foreign_key => 'parent_id', :order => 'position'
   belongs_to :taxonomy

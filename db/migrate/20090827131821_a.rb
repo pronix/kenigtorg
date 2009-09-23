@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 class A < ActiveRecord::Migration
   def self.up
 		t = Taxonomy.new(

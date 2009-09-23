@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 # Copyright (c) 2008 [Sur http://expressica.com]
 
 module SimpleCaptcha #:nodoc
