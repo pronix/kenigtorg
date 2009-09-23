@@ -4,3 +4,4 @@ log/server.log
 log/test.log
 tmp/*
 log/*.log
+db/development.sqlite3
