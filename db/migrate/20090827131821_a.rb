@@ -101,13 +101,6 @@ class A < ActiveRecord::Migration
 										])
 										
 										if hschool_cats
-											#~ be = BlogEntry.create([
-												#~ {:author =>'admin',:title=>'main',:body=>'Главная'},
-												#~ {:author =>'admin',:title=>'about_us',:body =>'О нас'},
-												#~ {:author =>'admin',:title=>'contacts',:body =>:'Контакты'},
-												#~ {:author =>'admin',:title=>'links',:body=>'Ссылки'}
-											#~ ]);
-											#~ execute("INSERT INTO 'blog_entries' VALUES(NULL,'admin','main','главная')");
 										end	
 									
 								end #cat_hschool.save

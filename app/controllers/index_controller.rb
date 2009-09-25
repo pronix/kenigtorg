@@ -9,7 +9,7 @@ class IndexController < ApplicationController
 	 
 		if !be
 			BlogEntry.create([
-				{:author=>'admin',:title=>'about_us',:body=>'о нас'},
+				{:author=>'admin',:title=>'about_us',:body=>'О компании'},
 				{:author=>'admin',:title=>'main',:body=>'главная'},
 				{:author=>'admin',:title=>'links',:body=>'ссылки'},
 				{:author=>'admin',:title=>'contacts',:body=>'контакты'}
