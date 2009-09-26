@@ -137,7 +137,7 @@ title = 'Подробнее' if controller.controller_name=='products' && contro
 		<div id='content_here'>
 		 <%controller.controller_name-%>
 		 <%controller.action_name-%>
-		
+     <%= link_to 'Схема Проезда','/images/sxema.png' if controller.action_name == 'contacts' %>		
 		<%if params[:id]%>
 		
 			<%if params[:id][1] =='oborudovaniie-dlia-dietskogho-sada' || params[:id][1] =='oborudovaniie-dlia-shkoly' || params[:id][1]=='oborudovaniie-dlia-vuza-i-ptu'%>
