@@ -30,7 +30,9 @@ class OrderMailer < ActionMailer::Base
 	def appnew(name,msg)
 		@name = name
 		@msg = msg
-	end
+    @from = Spree::Config[:order_from]
+    @recipients = Spree::Config[:order_from]
+  end
 	
 	
 end

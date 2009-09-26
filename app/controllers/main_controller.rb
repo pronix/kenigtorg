@@ -56,9 +56,8 @@ def update
 	#~ @user = User.new(params[:user])
 	if simple_captcha_valid?
 		flash[:notice] = 'Ваше письмо было успешно отправлено'
-		
-		OrderMailer.deliver_appnew(params['app_email'],params['user_msg'])
-	else
+    OrderMailer.deliver_appnew(params[:app][:email],params[:user][:msg])
+  else
 		flash[:notice] = 'Ошибка! повторите попытку.'
 		#~ redirect_to :back
 		#~ render :text =>flash[:notice]
