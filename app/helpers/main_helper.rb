@@ -7,12 +7,12 @@ module MainHelper
 			a['kindergarden'] = ss+' детского сада'
 			a['school'] = ss+' школы'
 			a['highschool'] = ss+' ВУЗов и ПТУ'
-			a['about_us'] = 'О компании'
+			a['about_us'] = 'О КОМПАНИИ'
 			a['contacts'] = 'КОНТАКТЫ'
 			a['links'] = 'ПОЛЕЗНЫЕ ССЫЛКИ'
 			a['news'] = 'НОВОСТИ'
 			a['app'] = 'ЗАЯВКА'
-			a['search'] = 'Результат поиска'
+			a['search'] = 'РЕЗУЛЬТАТ ПОИСКА'
 			 
 		
 			

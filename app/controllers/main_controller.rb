@@ -1,4 +1,7 @@
 # encoding: utf-8
+$KCODE = 'u'
+require 'rubygems'
+require 'unicode'
 class MainController < ApplicationController
   
 	def index
@@ -45,7 +48,21 @@ class MainController < ApplicationController
 	end	
 	
 	def search
-		@result = Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+params[:id]+"%"])
+    name = Unicode::downcase(params[:id])
+    @result = Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
+    if @result.empty?
+      i=0
+    name =   name.split('').collect do |x|
+        if i==0
+          i=1
+          Unicode::upcase(x)
+        else
+          x
+        end
+      end
+      name = name.join('')
+      @result = Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
+    end
 	end
 	
 	def to_url 
