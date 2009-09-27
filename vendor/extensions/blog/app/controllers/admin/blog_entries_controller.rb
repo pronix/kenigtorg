@@ -16,4 +16,14 @@ class Admin::BlogEntriesController < Admin::BaseController
     wants.html { redirect_to admin_blog_entries_path }
   end
 
+  def destroy
+    @b=BlogEntry.find_by_id(params[:id])
+    if @b.destroy
+      flash[:notice] = 'Удалено'
+    else
+      flash[:error] = 'Нельзя удалять'
+    end
+    redirect_to :back
+  end
+
 end

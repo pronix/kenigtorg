@@ -6,6 +6,8 @@ class BlogEntry < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :body
 
+  before_destroy :check_main_pages
+
   def codes
     self.body.scan(/\*([^:*]+):?([^*]*)\*/).uniq
   end
@@ -29,4 +31,13 @@ class BlogEntry < ActiveRecord::Base
       self.products = codes.map {|k| Variant.find_by_sku(k).product }
     end  
 
+    def check_main_pages
+      if self.title =~ /about_us|main|contacts|links/
+        self.errors.add "Can't destroy "
+        raise ActiveRecord::Rollback
+#        false
+      else
+        true
+      end
+    end
 end
