@@ -126,6 +126,10 @@ module MainHelper
 				str+='</div>'
 			else
 				str = BlogEntry.find_by_title(a).body	
+        if controller.controller_name =='main' && controller.action_name =='index'
+          str = str.split('Мы являемся официальным представителем ОП')[0]
+          str+= link_to('Подробнее','/main/about_us')
+        end
 				
 					if isadmin? 
 						str+= edit_link(controller.action_name,'Править раздел>>');
