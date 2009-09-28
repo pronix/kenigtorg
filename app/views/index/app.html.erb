@@ -35,8 +35,8 @@ $('form').submit(function(){
 </script>
 <%=image_tag('close.gif',:align=>'right')-%>
 <%form_tag :action=> 'update' do %>
-	<%=text_field 'app', 'email', :value=>'e-mail'-%>
-	<p><%=text_area 'user', 'msg',:value=>'Заявка'-%></p>
+	<%=text_field 'app', 'email', :value=>'Введите адрес электорнной почты'-%>
+	<p><%=text_area 'user', 'msg',:value=>'Введите  контактные данные и наименование интересующего оборудования.'-%></p>
 	<%= show_simple_captcha %>
 	<%=submit_tag "Отправить"-%>
 <%end%>
