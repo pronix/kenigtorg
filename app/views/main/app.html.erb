@@ -37,14 +37,15 @@ $('form').submit(function(){
 </script>
 
 <%form_tag :action=> 'update' do %>
-	<%=text_field 'app', 'email', :value=>'e-mail'-%>
+
+	<p><%=text_field 'app', 'email', :value=>'Введите адрес электорнной почты'-%></p>
 	<%if params[:subject]%>
-		<%val = params[:subject]%>
+		<p><%val = params[:subject]%></p>
 	<%else%>
 		<%=val = 'Заявка'-%>
 	<%end%>
 	
-	<p><%=text_area 'user', 'msg',:value=>val-%></p>
+	<p><%=text_area 'user', 'msg',:value=> 'Введите  контактные данные и наименование интересующего оборудования.'-%></p>
 	<%= show_simple_captcha %>
 	<%=submit_tag "Отправить"-%>
 <%end%>
