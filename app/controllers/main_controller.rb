@@ -64,7 +64,6 @@ class MainController < ApplicationController
       @result << Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
         name = Unicode::upcase(name)
       @result << Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
-    end
 	end
 	
 	def to_url 
