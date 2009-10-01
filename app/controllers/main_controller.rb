@@ -50,7 +50,7 @@ class MainController < ApplicationController
 	def search
     name = Unicode::downcase(params[:id])
     @result = []
-    @result << Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
+    @result += Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
       i=0
     name =   name.split('').collect do |x|
         if i==0
@@ -61,9 +61,9 @@ class MainController < ApplicationController
         end
       end
       name = name.join('')
-      @result << Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
-        name = Unicode::upcase(name)
-      @result << Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
+      @result += Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+name+"%"])
+      @result += Product.find(:all,:conditions=>['name LIKE ? AND deleted_at is NULL',"%"+Unicode::upcase(name)+"%"])
+      @result.uniq!
 	end
 	
 	def to_url 
